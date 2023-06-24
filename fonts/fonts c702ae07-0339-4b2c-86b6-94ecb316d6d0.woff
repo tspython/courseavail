@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>File not found - 404 - Santa Clara University</title>    
+		<!-- external styles -->
+  		<link rel="stylesheet" href="../css/all_1.css">
+		<!-- /external styles -->
+		<link href="../css/scu.css" rel="stylesheet">
+		<script src="../js/scu.js"></script>
+	</head>
+	<body class="">
+		<header class="header-legacy bg-light border-bottom">
+			<div class="container d-flex align-items-center justify-content-center justify-content-lg-between py-3">
+			  <div class="d-flex align-items-center">
+				<a href="https://www.scu.edu/" class="seal d-none d-lg-inline mr-3">
+				  <i class="icon-scu"></i>
+				  <span class="sr-only">Santa Clara University Homepage</span>
+				</a>
+				<div class="text-center text-md-left">
+				  <h2 class="text-trajan wordmark m-0">
+					<a href="https://www.scu.edu/" class="text-primary">Santa Clara University</a>
+				  </h2>
+				  <h6 class="text-trajan wordmark m-0">
+					<a href="https://www.scu.edu/" class="text-muted">The Jesuit University in Silicon Valley</a>
+				  </h6>
+				</div>
+			  </div>
+			</div>
+		</header>
+
+
+	 <div class="container w-75" id="content">
+	   <h1 class="page-title" id="page-title">Sorry, we didn't find what you're looking for.</h1>                                                       
+	   <p class="lead">Please try the site search form below.</p>
+
+		<form action="https://www.scu.edu/search/" id="search" method="get" class="mb-3">
+			<div class="input-group">
+				<label class="sr-only" for="q">Search</label>
+				<input id="q" class="form-control ui-autocomplete-input" autocomplete="off" name="q" type="text" placeholder="SEARCH"> <button class="btn btn-primary" type="submit">Search</button>
+			</div>
+		</form>
+		<p>For additional help, please&nbsp;<a href="https://scuweb.zendesk.com/hc/en-us/requests/new">submit a support ticket</a>&nbsp;or <a href="mailto:support@scuweb.zendesk.com">email us</a>.</p>
+		 
+
+		</div>
+
+
+		 <footer class="footer-core border-top bg-white pt-4 footer-core">
+	<div class="container">
+		<a href="https://www.scu.edu/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<p class="mb-0">500 El Camino Real<br>Santa Clara, CA 95053<br>(408) 554-4000</p>
+<ul class="list-unstyled list-spaced">
+<li><a href="https://www.scu.edu/map/">Maps &amp; Directions</a></li>
+<li><a href="https://www.scu.edu/phonebook">Contact Us</a></li>
+</ul>
+				<ul class="list-inline mb-0 footer-social-icons">
+					<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/SantaClaraUniversity">
+					<i class="demo-icon icon-facebook-squared"></i>
+					<span class="sr-only">SCU on Facebook</span>
+					</a></li>
+					<li class="list-inline-item"><a class="twitter" href="https://twitter.com/SantaClaraUniv">
+					<i class="demo-icon icon-twitter"></i>
+					<span class="sr-only">SCU on Twitter</span>
+					</a></li>
+					<li class="list-inline-item"><a class="linkedin" href="https://www.linkedin.com/edu/santa-clara-university-17914">
+					<i class="demo-icon icon-linkedin"></i>
+					<span class="sr-only">SCU on Linkedin</span>
+					</a></li>
+					<li class="list-inline-item"><a class="youtube" href="https://www.youtube.com/channel/UCsii-lMGVZ5tL3lj2No6i7A?sub_confirmation=1">
+					<i class="demo-icon icon-youtube"></i>
+					<span class="sr-only">SCU on YouTube</span>
+					</a></li>
+					<li class="list-inline-item"><a class="instagram" href="https://instagram.com/santaclarauniversity/">
+					<i class="demo-icon icon-instagram"></i>
+					<span class="sr-only">SCU on Instagram</span>
+					</a></li>
+				</ul>
+			<hr class="d-block d-md-none pt-2">
+			</div>
+			<div class="col-12 col-md-3">
+			<ul class="list-unstyled list-spaced">
+<li>
+<h6 class="text-uppercase">Resources</h6>
+</li>
+<li><a href="https://www.scu.edu/emergency/">Emergency Info</a></li>
+<li><a title="Human Resources » Careers" href="https://wd1.myworkdaysite.com/recruiting/scu/scu">Careers</a></li>
+<li><a href="https://www.scu.edu/login">Login</a></li>
+<li><span class="fa fa-universal-access text-primary"><span class="sr-only">Accessiblity icon</span></span> <a href="https://www.scu.edu/accessibility/">Accessibility</a></li>
+</ul>
+			</div>
+			<div class="col-12 col-md-3">
+			<ul class="list-unstyled list-spaced">
+<li>
+<h6 class="text-uppercase ">Our Campus</h6>
+</li>
+<li><a href="https://www.scu.edu/missionchurch/">The Mission</a></li>
+<li><a href="https://www.scu.edu/events/">Event Calendar</a></li>
+<li><a href="https://www.scu.edu/news-and-events/">News</a></li>
+</ul>
+			</div>
+		</div>
+	</div>
+	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">© 2020 Santa Clara University</p>
+</footer>
+
+
+	
+</body></html>

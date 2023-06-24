@@ -1,0 +1,60 @@
+
+.color_1, .btn-default.color_1 {
+	background-color:#96afc1 !important; /*v lt cadet*/
+}
+.color_2, .btn-default.color_2 {
+	background:#6f91ab !important; /*lt cadet*/
+}
+.color_3, .btn-default.color_3 {
+	background:#52728b !important; /*md cadet*/
+}
+.color_4, .btn-default.color_4 {
+	background:#3a5163 !important; /*scu brand - cadet*/
+}
+.color_5, .btn-default.color_5 {
+	background:#23313c !important; /*dk cadet*/
+}
+.color_6, .btn-default.color_6 {
+	background:#04318c !important; /*md navy*/
+}
+
+.color_7, .btn-default.color_7 {
+	background:#021d52 !important; /*scu brand - navy*/
+}
+.color_8, .btn-default.color_8 {
+	background:#000713 !important; /*dk navy*/
+}
+.color_9, .btn-default.color_9 {
+	background:#71645c !important; /* lt stone*/
+}
+.color_10, .btn-default.color_10 {
+	background:#4e4540 !important; /* scu brand - stone */
+}
+.color_11, .btn-default.color_11 {
+	background:#2c2724 !important; /* dk stone*/
+}
+.color_12, .btn-default.color_12 {
+	background:#0b0909 !important; /*v dk stone */
+}
+.color_13 {
+	background:#16a765; /*green*/
+}
+.color_14 {
+	background:#F691B2; /*pink*/
+}
+.color_15 {
+	background:#5C2DD1; /*dk blue*/
+}
+.color_16 {
+	background:#d13a0c; /*dk red*/
+}
+.color_17 {
+	background:#16d1d1; /*teal*/
+}
+
+.classBlock a, a.btn-default {
+	color:#000;
+}
+.color_3 a, .classBlock.color_3 span, a.btn-default.color_3, .color_4 a, .classBlock.color_4 span, a.btn-default.color_4, .color_5 a, .classBlock.color_5 span, a.btn-default.color_5, .color_6 a, .classBlock.color_6 span, a.btn-default.color_6, .color_7 a, .classBlock.color_7 span, a.btn-default.color_7, .color_8 a, .classBlock.color_8 span, a.btn-default.color_8, .color_9 a, .classBlock.color_9 span, a.btn-default.color_9, .color_10 a, .classBlock.color_10 span, a.btn-default.color_10, .color_11 a, .classBlock.color_11 span, a.btn-default.color_11, .color_12 a, .classBlock.color_12 span, a.btn-default.color_12 {
+	color:#fff;
+}

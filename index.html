@@ -1,0 +1,461 @@
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CourseAvail</title>
+
+
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/jquery-ui.css">
+
+	<link href="css/featherlight.min.css" type="text/css" rel="stylesheet">
+	<script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<link href="css/ca.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/dashboard.css">
+
+	<script type="text/javascript" src="js/mustache.js"></script>
+
+
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/Searches.class.js"></script>
+	<script type="text/javascript" src="js/CourseDB.class.js"></script>
+	<script type="text/javascript" src="js/PlanCollection.class.js"></script>
+	<script type="text/javascript" src="js/Plan.class.js"></script>
+	<script type="text/javascript" src="js/Course.class.js"></script>
+	<script type="text/javascript" src="js/CustomBlock.class.js"></script>
+	<script type="text/javascript" src="js/Persist.cookie.class.js"></script>
+	<script type="text/javascript" src="js/Persist.db.class.js"></script>
+	<script type="text/javascript" src="js/Map.class.js"></script>
+	<script type="text/javascript" src="js/utils-schedule.js"></script>
+	<script type="text/javascript" src="js/utils-watchlist.js"></script>
+	<script type="text/javascript" src="js/utils-history.js"></script>
+	<script type="text/javascript" src="js/utils-export.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+
+
+	<!-- <script type="text/javascript" src="js/_courseavail.min.js?v=3.029"></script> -->
+
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<!---  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjzUw61YLvAu8-EMbHKGCEmrJrv555Fk8"></script>--->
+</head>
+
+<body>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5T9KDR" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5T9KDR');</script>
+	<!-- End Google Tag Manager -->
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 5;">
+		<div class="container-fluid container-fluid-spacious">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-brand navbar-brand-emphasized">
+					<div class="logo">
+						<i class="icon-scu icon-logo"></i>
+					</div>
+					<div class="txt">
+						<small class="text-sans-bold text-uppercase wordmark">Santa Clara University</small><br>
+
+						<div class="inline dropdown">
+							<a class="dropdown-toggle" href="#" data-toggle="dropdown">CourseAvail <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>Related Links:</li>
+								<li><a href="https://www.scu.edu/">SCU Home</a></li>
+								<li><a href="https://www.scu.edu/registrar/">Registrar</a></li>
+								<li><a href="https://www.scu.edu/bulletin/undergraduate/">Undergraduate Bulletin</a></li>
+								<!--<li><a href="javascript:goToPage('export')">Export or Print</a></li>-->
+							</ul>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="javascript:goToPage('schedule')"><i class="fa fa-home" aria-hidden="true"></i> Schedules</a>
+					</li>
+					<li>
+						<a href="javascript:goToPage('watchlist')"><i class="fa fa-eye" aria-hidden="true"></i> Watchlist</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown"><span id="qtitle">Quarter</span> <span class="caret"></span></a>
+						<ul class="dropdown-menu" id="availableQuarters">
+							<li><a href="javascript:lb('<h3>Course Listings are Moving!</h3><p>All course availability for Fall 2023 and later can be found in <a href=\'https://www.myworkday.com/wday/authgwy/scu/login.htmld\'>Workday</a>.</p>')">Fall 2023</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown"><span id="selectedCtext">Career</span> <span class="caret"></span></a>
+						<ul class="dropdown-menu careerbtns">
+							<li id="career_ugrad" class="active"><a href="javascript:selectCareer('ugrad');">Undergraduate</a></li>
+							<li id="career_grad"><a href="javascript:selectCareer('grad');">Graduate</a></li>
+							<li id="career_all"><a href="javascript:selectCareer('all');">All</a></li>
+						</ul>
+
+					</li>
+					<li class="dropdown guestOpts">
+						<a href="javascript:login()" id="link_login"> <i class="fa fa-user"></i> Login</a>
+					</li>
+					<li class="dropdown loggedInOpts" style="display: none;">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:return void(0);"> <i class="fa fa-user"></i> <span class="userText">Username</span>
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:goToPage('history')">View My History</a></li>
+							<li><a href="" id="link_logout">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div style="clear:both"></div>
+	<div class="loadingCont" id="load">
+		<div class="loadingInner">
+			<i class="fa fa-spinner fa-spin"></i><br>loading…
+		</div>
+	</div>
+	<div class="alert alert-warning text-center"><strong>Looking for Fall 2023 Classes?</strong> All course availability for Fall and later can be found in <a href="https://www.myworkday.com/wday/authgwy/scu/login.htmld">Workday!</a></div>
+
+	<div id="main"></div>
+
+
+	<div style="width:0px;overflow:hidden">
+		<div id="mylightbox"></div>
+	</div>
+
+	<div id="mainDialog" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" id="dialogInner">
+			</div>
+		</div>
+	</div>
+	<!--using this for determining mq-->
+	<div class="visible-xs"></div>
+
+	<div id="submitBug">
+		<a href="https://scuweb.zendesk.com/hc/en-us/requests/new"><i class="fa fa-question-circle"></i> Help</a>
+	</div>
+
+
+
+	<!------------- templates ------------------>
+
+
+	<script id="templ-courseDetails" type="x-tmpl-mustache">
+
+	{{#loc_id}}
+		<div class="col-md-7">
+	{{/loc_id}}
+	<div class="pull-right">
+		<a class="btn-add-watchlist btn btn-xs btn-info" href="javascript:addToWatchlist('{{sectionuid}}');" data-cnbr="{{sectionuid}}" title="Add to Watchlist" id="watch_add" {{#isInWatchlist}}style="display:none"{{/isInWatchlist}}>
+			Add to Watchlist <i class="fa fa-eye"></i>
+		</a>
+		<a class="btn-in-watchlist btn btn-xs btn-success" href="javascript:removeFromWatchlist('{{sectionuid}}');" data-cnbr="{{sectionuid}}" title="In Watchlist" id="watch_in" {{^isInWatchlist}}style="display:none"{{/isInWatchlist}}>
+			In Watchlist <i class="fa fa-check"></i>
+		</a>
+		{{^hideLink}}<a href="?class={{sectionuid}}&t={{term}}" class="btn btn-xs btn-info" title="Link to this course">Share <i class="fa fa-share-alt"></i></a>{{/hideLink}}
+	</div>
+	<h3 id="detailHead">{{subject}} {{catalognbr}}: #{{classnbr}}</h3>
+	<div id="detailDescr"><h4>{{classtitle}}</h4></div>
+	
+	<table class="table table-striped">
+		{{#seats_text}}
+			<tr>
+				<th>Seats Remaining</th>
+				<td><span class="label label-{{has_seats}}">{{seats_text}}</span></td>
+			</tr>
+		{{/seats_text}}	
+		<tr>
+			<th>Quarter</th>
+			<td>{{termname}}{{#sessionCode}} - {{sessionCode}}{{/sessionCode}}</td>
+		</tr>
+		
+		<tr>
+			<th>Level</th>
+			<td>{{academiclevel}}</td>
+		</tr>
+		<tr>
+			<th>Instructor(s)</th>
+			<td>{{^instructors}}{{^facids}}TBA{{/facids}}{{/instructors}}
+				{{#instructors}}
+					<div>{{lastName}},  {{firstName}}
+				{{/instructors}}			
+				{{#facids}}
+					<div>{{lastName}},  {{firstName}}
+				{{/facids}}			
+			</td>
+		</tr>		 
+		<tr>
+			<th>Meeting Times</th>
+			<td>
+				
+				<div>{{#meetdays1}}{{meetdays1}} {{meetstarttm1}}-{{meetendtm1}} {{meetloc1}}{{/meetdays1}}</div>
+				<div>{{#meetdays2}}{{meetdays2}} {{meetstarttm2}}-{{meetendtm2}} {{meetloc2}}{{/meetdays2}}</div>
+			
+			</td>
+		</tr>
+		<tr>
+			<th>Credits</th>
+			<td>{{minimumunits}}{{#maximumunits}}/{{maximumunits}}{{/maximumunits}}</td>
+		</tr>	
+		
+		{{#coreDescr}}
+		<tr>
+			<th>Core</th>
+			<td>{{{coreDescr}}}</td>
+		</tr>			
+		{{/coreDescr}}
+	</table>
+	
+	
+
+	{{#loc_id}}
+		</div>
+		<div class="col-md-5 text-center"> <br><br>
+			 <a href="/map/location/{{loc_id}}" class="btn btn-sm btn-default">View on Campus Map	  <i class="fa fa-external-link-square"></i></a><br> 
+			<!--<div style="width:100%;height:{{#l_img}}200px{{/l_img}}{{^l_img}}260px;{{/l_img}};" id="cdetailmap">campus map</div>	-->
+			{{#l_img}}
+				<div class="flrMapPreviewCont">
+					<a href="javascript:floormap({{l_flcid}})">
+						<div class="vwFlrMap">View {{l_name}}, Floor {{l_flr}} <i class="fa fa-external-link-square"></i></div>
+						<img src="/apps/ws/courseavail/imagedownload/{{l_img}}" style="max-width:100%;max-height:180px;">
+					</a>
+				</div>
+			{{/l_img}}
+		</div>
+		<div class="col-md-12">
+	{{/loc_id}}
+
+ 
+	{{#description}}	
+		<h4>Description</h4>
+		{{{description}}}
+	{{/description}}
+
+	{{#publicnotes}}	
+		<hr>
+		<h5>Class Notes:</h5>
+		{{publicnotes}}
+	{{/publicnotes}}
+
+	{{#enrllinfo}}	
+		<hr>
+		<h5>Enrollment Info:</h5>
+		{{enrllinfo}}
+	{{/enrllinfo}}
+
+	<div id="alternates"></div>
+	<div style="clear:both"></div><hr>
+	<p class="small">Please note:  cross-listed class capacities may not reflect accurate seat availability.</p>
+		
+	{{#loc_id}}
+		</div>
+	{{/loc_id}}
+</script>
+
+<script id="templ-alternates" type="x-tmpl-mustache">
+ 	<hr>
+	<h5>Other Sections of {{results.0.subject}} {{results.0.catalogNbr}}  </h5>
+   <table class="morphsearch-results table">
+		{{#results}}
+			<tr>
+				<td>
+					<strong><a href="javascript:showDetails('{{sectionUID}}');">{{classNbr}}</a></strong>
+					<br />
+					<small>
+						{{subject}} {{catalogNbr}}
+					</small>
+					{{#seats_text}}
+						<div style="margin-top:6px">
+							<span class="label label-{{has_seats}}">{{seats_text}}</span>
+						</div>
+					{{/seats_text}}
+				</td>
+				<td>
+					{{classTitle}}
+					<br />
+					<small>
+						{{#facids}}
+							{{lastName}}, {{firstName}}
+						{{/facids}}
+						 {{^facids}}Instructor TBA{{/facids}}
+					</small>
+					<br />
+					<small>
+						{{#meetDays1}}{{meetDays1}} {{time1_fr}}-{{meetEndTm1}}{{/meetDays1}}
+						{{#meetDays2}}, {{meetDays2}} {{time2_fr}}-{{meetEndTm2}}{{/meetDays2}}
+						
+					</small>
+				</td>
+				<td class="classAddBtn plan-addable text-right" data-cnbr="{{sectionUID}}"> 
+					<a class="btn btn-default search-complete-btn" data-cnbr="{{sectionUID}}" href="javascript:addToWatchlist('{{sectionUID}}');"><i class="fa fa-eye"></i><span class="sr-only">Add to Watchlist</span></a><div style="clear:both"></div>                        
+					<a class="btn-plan-prohibit btn btn-sm btn-danger" href="javascript:plans.getCurrent().addCourse('{{sectionUID}}');" title="Cannot add course">
+						<i class="fa fa-question-circle"></i>
+					</a>
+					<a class="btn-plan-addable btn btn-sm btn-success" href="javascript:plans.getCurrent().addCourse('{{sectionUID}}');" title="Add Course" id="btnAddCourse">
+						<i class="fa fa-plus-circle"></i>
+					</a>
+					<span class="btn-in-plan btn btn-sm btn-success" title="Course is in your plan">
+						<i class="fa fa-check"></i>
+					</span>
+				</td>
+				
+			</tr>
+		{{/results}}
+	</table>
+</script>
+
+
+<script id="dialog-error" type="x-tmpl-mustache">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title">Error{{#title}}: {{title}}{{/title}}</h4>
+		</div>
+	<div class="modal-body alert-danger">
+		{{{message}}}
+	</div>
+	<div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">OK</button></div>
+</script>
+
+	<script id="dialog-generic" type="x-tmpl-mustache">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title">{{title}}</h4>
+		</div>
+	<div class="modal-body">
+		{{{message}}}
+	</div>
+	<div class="modal-footer">
+		{{#buttons}}
+			<button type="button" class="btn btn-{{btn-type}}" data-dismiss="modal" onclick="{{btn-action}}" id="btnActionCustomAction">{{btn-text}}</button>
+		{{/buttons}}
+		{{^buttons}}
+			<button type="button" class="btn btn-{{btn-type}}" data-dismiss="modal" id="btnActionModalOK">OK</button>
+		{{/buttons}}
+	</div>
+</script>
+
+	<script id="templ-share" type="x-tmpl-mustache">
+	<p>Use the following link to send your current plan, <strong>"{{planname}}"</strong>.</p>
+	<input type="text" value="{{link}}" id="sharelink" class="form-control">
+</script>
+
+	<script id="templ-cbCalendarBlock" type="x-tmpl-mustache">
+	<div class="classBlock hour_{{starthr}} minute_{{startmn}} duration_{{duration}} color_{{id}} plan-custom-{{uid}}">
+		<span class="hidden-xs">{{name}}</span>
+	</div>
+</script>
+
+<script id="templ-cbListItem" type="x-tmpl-mustache">
+	<tr class="plan-custom-{{uid}}">
+		<!--- <td class="color_{{id}} cli-status"><i class="fa fa-check"></i></td> --->
+		<td><a class="btn btn-default color_{{id}}">Custom</a></td>
+		<td colspan=2>{{name}}</td>		
+		<td>{{dys}}, {{si}}-{{ei}}</td>
+		<td>
+			<div class="btn-group">
+				<a href="javascript:plans.getCurrent().removeCustom('{{uid}}');" class="btn btn-xs btn-info"><i class="fa fa-remove"><span class="sr-only">Remove Custom Block</span></i></a></i>
+			</div>
+		</td>
+	</tr>
+</script>
+
+	<script id="templ-floorMap" type="x-tmpl-mustache">
+	<h3>{{buildname}}, Floor {{floornum}}</h3>
+	<h4>{{room}}</h4>
+	<div class="fmap_outer" style="{{#taller}}max-height:550px;{{/taller}}{{#wider}}max-width:650px;{{/wider}}">
+		<img src="/apps/ws/courseavail/imagedownload/{{flr_image}}" class="{{#taller}}img_taller{{/taller}}{{#wider}}img_wider{{/wider}}">
+		<div class="fmap">
+		</div>
+		<div class="fmap_pin" style="left:{{wpct}}%;top:{{hpct}}%">
+			<img src="img/pin.png">
+		</div>
+	</div>	
+</script>
+
+
+
+
+<script id="dialog-submitBug" type="x-tmpl-mustache">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title">Get Help</h4>
+		</div>
+	<div class="modal-body" id="bugform">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#helptop" data-toggle="tab">Help Topics</a></li>
+			<li><a href="#contactform" data-toggle="tab">Contact Us</a></li>
+		</ul>
+		<div class="tab-content clearfix">
+			<div class="tab-pane active" id="helptop">
+				 <div class="panel-group" id="accordion">
+					{{#results}}
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{topic_id}}"><span class="glyphicon glyphicon-chevron-down"></span> {{title}}</a>
+								</h4>
+							</div>
+							<div id="collapse{{topic_id}}" class="panel-collapse collapse" style="padding:10px;">
+								{{{contents}}}
+							</div>
+						</div>
+					
+					{{/results}}
+				</div>			
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+			<div class="tab-pane" id="contactform">
+				<div class="alert alert-danger" id="sbErrors" style="display:none"></div>
+				<form method="post" action="#" onsubmit="return sendBugReport();">
+				<div class="form-group">
+					<label>Question type:</label><br>
+						<input type="radio" class="sb_target" name="target" value="tech"> Technical issue or bug report related to CourseAvail<br>
+						<input type="radio" class="sb_target" name="target" value="reg"> Course related questions, Registrar 				
+				</div>	
+				<div class="form-group">
+					<label for="email">Your Email*</label>
+					<input type="text" name="email" id="sb_email">
+				</div>	
+				<div class="form-group">
+					<label for="nm">Question/Details*</label>
+					<textarea style="width:100%;height:110px;" name="detail" id="sb_detail"></textarea>
+				</div>	
+				<div class="form-group">
+					<script src="https://www.google.com/recaptcha/api.js" async defer />
+					<div class="g-recaptcha" data-sitekey="6Le1LAwAAAAAAGgXjNnswOajLU8Q9t9HbmqydVrG"></div>
+				</div>	
+				<div class="modal-footer" id="bugformBtns">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary"   onclick="sendBugReport();">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script></body></html>

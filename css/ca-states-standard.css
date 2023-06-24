@@ -1,0 +1,77 @@
+.state-container {
+	position:relative;
+}
+
+/************** state 1 ***********************/
+
+.state-1-intro {
+	padding:6px 90px;
+	margin:8% 0px 2% 0px;	
+	
+}
+.state-1-search-options {
+	padding:6px 90px;
+	margin:0 0 2% 0px;	
+}
+.state-1-search-results {
+	height:0px;
+	overflow:hidden;	
+	border:0px;	
+}
+
+.state-1-addcustom, .state-2-addcustom {
+	height:0px;
+	overflow:hidden;
+	padding:0px;
+	border:0px;
+}
+
+.state-1-leftcol, .state-2-leftcol {
+	position:absolute;
+	width:80%;
+	left:10%;
+}
+.state-1-rightcol, .state-2-rightcol {
+	position:absolute;
+	width:50%;
+	left:100%;
+	opacity:0.0;
+}
+.state-1-leftcol, .state-2-leftcol, .state-12-rightcol, .state-3-leftcol, .state-3-rightcol {
+	padding:6px;	
+}
+
+
+/************** state 2 ***********************/
+.state-2-intro, .state-3-intro {
+	height:0px;
+	overflow:hidden;	
+}
+.state-2-search-options {
+	margin-top:0px;	
+}
+.state-2-search-results {
+	height:auto;	
+}
+
+/************** state 3 ***********************/
+.state-3-addcustom {
+	height:auto;
+}
+
+.state-3-leftcol{
+	position:absolute;
+	width:50%;
+	left:0%;
+}
+.state-3-rightcol {
+	position:absolute;
+	width:50%;
+	left:50%;
+	opacity:100%;
+}
+.state-3-search-options {
+	padding-bottom:15px;	
+}
+
+

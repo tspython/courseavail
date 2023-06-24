@@ -1,0 +1,447 @@
+/* contains colors for the various blocks added to the week grid*/
+@import url("ca-colorblocks.css");
+
+
+@import url("ca-small.css")  screen and (max-width: 768px);
+@import url("ca-standard.css") screen and (min-width: 768px);
+@import url("ca-standard.css") print;
+
+
+/* the layout can be in 3 "states", depending on where the user is in the process*/
+@import url("ca-states-small.css") screen and (max-width: 768px);
+@import url("ca-states-standard.css")  (min-width: 768px);
+
+
+
+@media (min-width:544px) and (max-width:767px){
+	.cell-visible-sm {display:table-cell!important}
+}
+body, h2, h3, h4, h5 {
+	color:#333;
+}
+
+h1 {
+	color: #4e4540;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+    color: #e9e8d5;
+}
+
+.navbar-fixed-top {
+	background-color: #b30738;
+}
+.navbar-brand .logo {
+	float:left;
+	margin-left:-15px;
+}
+.navbar-brand .txt {
+	float:left;
+	margin-left:35px;
+	color:#eee;
+}
+.navbar-brand .txt .dropdown-toggle {
+	color:#eee;
+}
+.navbar-brand .txt .dropdown-menu li {
+	color:#777;
+}
+.navbar-brand a:hover .txt {
+	color:#fff;
+}
+
+.navbar-nav a:hover {
+	background-color:#72001b;
+}
+.icon-logo {
+    position: absolute;
+    font-size: 45px;
+    margin-right: 18px;
+   
+    color: #eee;
+}
+@font-face {
+    font-family: fontello;
+    src: url(../fonts/fontello.eot);
+    src: url(../fonts/fontello.eot#iefix) format('embedded-opentype'),url(../fonts/fontello.woff) format('woff'),url(../fonts/fontello.ttf) format('truetype'),url(../fonts/fontello.svg#fontello) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+[class*=" icon-"]:before,[class^=icon-]:before {
+    font-family: fontello;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.icon-scu:before {
+    content: '\e810';
+}
+
+.featherlight .featherlight-content {
+    background: #f6f6f6 !important;
+}
+.text-muted {
+	color:#666;
+}
+.loggedInOpts {
+	display:none;	
+}
+.daygrid {
+	background:#dfdbd3;
+	position:relative;
+	overflow:hidden;
+}
+	
+.daycol {
+	padding-left:2px;
+	padding-right:1px;	
+	
+}
+
+#searchForm input {
+	background-color:#fff;
+	color:#333;
+	border:0px;
+	padding:10px;
+}
+
+#customSchedule {
+	margin: -15px 0 0 5px;
+}
+
+.hourblock {
+	color:#cacaca;
+	font-size:.7em;	
+	
+}
+.loadingCont {
+	position:relative;
+	display:none;
+	z-index:999;
+}
+.loadingInner {
+	position:fixed;
+	left:39%;
+	margin-top:10%;
+	width:20%;
+	background:#6d6d6d;
+	color:#eee;
+	padding:3% 8%;
+	text-align:center;
+	border-radius:5px;	
+	moz-border-radius:5px;	
+}
+
+.nav-search-options {
+	border:0px;	
+}
+.search-group {
+	padding:0px;	
+	margin:0px;
+}
+.search-group-head {
+	background:#dfdbd3;	
+	padding:4px 7px;
+	margin-top:5px;
+}
+.leftcourselist {
+	padding:8px !important;	
+}
+.inline {
+	display:inline;	
+}
+.plan-courses-body {
+	background-color:#dfdbd3;
+	padding:10px;	
+	margin-bottom:10px;
+}
+.plan-courses tr {
+	border-top:none;	
+}
+.plan-courses td {
+	padding:4px;
+}
+.plan-courses {
+	margin-bottom: 3px;	
+	font-size:.9em;
+	color:#000;
+}
+.cli-status {
+	width:38px;	
+	height:38px;	
+	text-align:center;
+}
+#searches-container th {
+	background-color: #6d6d6d;	
+	color:#fff;
+}
+#searches-container table {
+	margin-bottom:4px;
+	background-color:#91d6e4;
+}
+.savedNotif a {
+	color:white !important;	
+}
+.nocourses {
+	padding:6px;	
+}
+.tab-pane  {
+	padding:10px;	
+}
+.search-group-body {
+	padding:10px;	
+}
+.gm-style-iw {
+	color:black !important;	
+}
+.toggleIcon:before {
+    font-family: 'Glyphicons Halflings';  
+    content: "\e114";    
+    float: right;        
+    color: #fff;       
+}
+.collapsed  .toggleIcon:before {
+    font-family: 'Glyphicons Halflings' !important;  
+    color: #fff;       
+   content: "\e080" !important;    
+}
+th.headerSortUp:after {
+    font-family: 'Glyphicons Halflings';  
+    content: "\e114";    
+    float: right;        
+    color: #fff;  
+} 
+th.headerSortDown { 
+    background-image: url(../images/small_desc.gif); 
+    background-color: #3399FF; 
+} 
+.toggleIcon {
+	display:inline;	
+}
+.mainFormBtns {
+	padding:12px 0px;	
+}
+.mainFormBtns .btn {
+	white-space: normal !important; 
+}
+.navbar-right {
+	margin-right:10px;	
+}
+.altSugg {
+	display:inline;	
+}
+.seats- {
+	color: #888;
+    background-color: #ededed;
+    border-color: #eea236;
+}
+.btn-plan-prohibit, .btn-plan-addable, .btn-in-plan  {
+	display:none !important;	
+}
+
+.classAddBtn.plan-prohibit .btn-plan-prohibit {
+	display:block !important;
+}
+.classAddBtn.plan-addable .btn-plan-addable {
+	display:block !important;
+}
+.classAddBtn.in-plan .btn-in-plan {
+	display:block !important;
+}
+.custom-hybridSelect {
+	position: relative;
+	display: inline-block;
+}
+.custom-hybridSelect-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	width:25px;
+	background:#ddd;
+	padding:15px 8px;
+	font-size:1.5em;
+	color:#777;
+	
+}
+.custom-hybridSelect-input {
+	margin: 0;
+	padding: 5px 10px;
+}
+.hgh-green {
+	background-color:#38AD27;	
+}
+
+
+/*these styles get the dataTables UI to look like bootstrap*/
+.dataTables_paginate, .dataTables_length {
+	float:right;	
+}
+.current {
+	color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;	
+}
+.sorting_asc, .sorting_desc {
+	background:#e4e4e4;
+}
+.sorting_asc:after {
+    font-family: 'Glyphicons Halflings';  
+    content: " \e114";    
+    float: right;        
+	  
+}
+.sorting_desc:after {
+    font-family: 'Glyphicons Halflings';  
+    content: " \e113" !important;    
+    float: right;        
+
+}
+
+/* these are for the floor map */
+.fmap_outer {position: relative;left:0px;top:0px;}
+.fmap { position:absolute;left:0px;top:0px;}
+.img_wider {width:100%;height:auto }
+.img_taller {height:100%;width:auto; }
+.fmap_pin { position:absolute;}
+.fmap_pin img { margin-left:-13px;margin-top:-38px}
+.flrMapPreviewCont {position:relative}
+.vwFlrMap {
+	position:absolute;
+	top:25px;
+	background:white;
+	padding:6px;
+	border:1px solid #bbb;
+	text-align:center;
+	margin:10px;
+	border-radius:6px;
+	moz-border-radius:6px;
+	font-size:.85em;
+	opacity:.9;
+	background:#eee;
+    width:80%;
+    right: 0;
+    left: 0;
+    margin: auto;		
+}
+
+/* oneSearch styles*/
+#searchForm input {
+	border:1px solid #ccc;
+}
+
+#recentsearchesCont {
+	position:relative;
+	width:100%;
+	display:none;
+}
+#recentsearches  {
+	width:100%;
+	position:absolute;
+	background-color:#ededed;				
+	text-align:left;
+	border:0px solid #aaa;	
+	font-size:.85em;
+	z-index:99;
+	color:#333;
+	padding:10px;
+}
+#recentsearches ul {
+	width:100%;
+	background-color:white;				
+	margin:0px;
+	padding:0px;
+	border-top:1px solid #ccc;	
+}
+#recentsearches ul li {
+	width:100%;
+	text-align:left;
+	list-style:none;
+	margin:0px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;	
+}
+#recentsearches ul li:hover {
+	background-color:#efefef;
+}
+#rc_title {
+	padding:4px;	
+}
+#advanced {
+	position:relative;
+	width:100%;
+	height:25px;
+}
+#advancedBtn, #advSearchOpts {
+	position:absolute;
+}
+#advancedBtn {
+	padding:5px 8px;
+	font-size:.85em;
+}
+#advancedBtn a {
+
+}
+#advSearchOpts {
+	background-color:#d2d2d2;
+    color:#333;
+	border:0px solid #d2d2d2;
+	padding:15px;
+	display:none;	
+	z-index:999;
+	width:100%;
+}
+#advSearchOpts .row {
+	margin-top:6px;
+}
+.advSumItem {
+	font-size:.9em;
+	background-color:#6E7B90;
+	color:#ededed;
+	margin:2px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+	border-top:1px solid #f6f6f6 !important;
+    background-color: #dfdbd3;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+ 	border-top:1px solid #f6f6f6 !important;
+   background-color: #e9e8d5;
+}
+.featherlight-content .table-striped>tbody>tr:nth-of-type(even) {
+ 	border-top:1px solid #f6f6f6 !important;
+   background-color: #dfdbd3;
+}
+.featherlight-content .table-striped>tbody>tr:nth-of-type(odd) {
+    border-top: 1px solid #f6f6f6 !important;
+    background-color: #e9e8d5;
+}
+
+a.dropdown-toggle:focus {
+	outline:1px solid #0000ff;
+}
+
+/*label colors: 1=has seats, 0=closed, 2=wait listing*/
+.label-1 {
+    background: #222222 !important;
+    border: 0 !important;
+    color: #fff;
+}
+.label-0 {
+  background: #C9302C !important;
+}
+.label-2 {
+  background: #eea236 !important;
+}
